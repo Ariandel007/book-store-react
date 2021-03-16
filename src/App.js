@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Header from './_components/Header';
+import MainPage from './_components/MainPage';
 
 //REDUX
 import { Provider } from 'react-redux';
@@ -11,6 +12,12 @@ function App() {
     <BrowserRouter>
       <Provider store={store}>
         <Header/>
+
+        <div className="container">
+          <Switch>
+            <Route exact path="/" component={MainPage}></Route>
+          </Switch>
+        </div>
 
       </Provider>
       

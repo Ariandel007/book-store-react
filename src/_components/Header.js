@@ -1,14 +1,16 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { Fragment } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 const Header = () => {
 
+    const history = useHistory();
     const sideNavRef = React.useRef();
 
     const openSideNav = () => sideNavRef.current.style.width = "250px";
     const closeSideNav = () => sideNavRef.current.style.width = "0px";
 
+    const goToMainPage = () => history.push('/');
 
     return (
         <Fragment>
@@ -23,7 +25,7 @@ const Header = () => {
                         </div>
 
                         <div className="col-7 col-lg-3">
-                            <h1 className="header-title"><FontAwesomeIcon icon={['fas', 'book']}/>Readct</h1>
+                            <h1 onClick={goToMainPage} className="header-title"><FontAwesomeIcon icon={['fas', 'book']}/>Readct</h1>
                         </div>
 
                         <div className="col-8 hide-in-mobile">
