@@ -1,5 +1,5 @@
 .header-bar {
-    background-color: #546E7A;
+    background-color: #1C1C1F;
 }
 
 .header-title {
@@ -11,21 +11,9 @@
     color: rgb(214, 213, 213);
 }
 
-.primary-button {
-    background-color: #89B3C7;
-    color: white;
-    border: none;
-    padding: 7px 15px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    border-radius: 4px;
+.shoping-cart-items {
+  font-size: 0.7rem;
 }
-
-.primary-button:hover {
-    background-color: #7bbddb;
-}
-
 
 /*---SIDEBAR INICIO----*/
 .sidenav {
@@ -35,18 +23,17 @@
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #314047;
+    background-color: #2E3036;
     overflow-x: hidden;
-    transition: 0.5s;
+    transition: 0.2s;
     padding-top: 60px;
 }
   
 .sidenav a {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
-  font-size: 25px;
   display: block;
-  transition: 0.3s;
+  transition: 0.2s;
 }
 
 .sidenav a:hover {
@@ -57,18 +44,28 @@
   position: absolute;
   top: 0;
   right: 25px;
-  font-size: 36px;
   margin-left: 50px;
 }
 
 .closebtn {
-    color: white;
-    cursor: pointer;
-}
-
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
 }
 
 /*---SIDEBAR FIN----*/
+
+/**MENU ITEMS*/
+@media only screen and (min-width: 992px) {
+  .hide-in-desktop {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .hide-in-mobile {
+    display: none;
+  }
+}
+
+/**MENU ITEMS FIN**/
