@@ -7,9 +7,9 @@ Este es una simple PWA en React que usa las siguientes herramientas:
 - Hooks
 - React Router v5
 - Redux, Thunk
+- Bootstrap
 
 El API para la cual fue pensada se encuentra aqui: https://github.com/Ariandel007/node-books-simple-api
-- Bootstrap
 
 ## _English Description_
 
