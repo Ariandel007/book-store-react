@@ -6,6 +6,8 @@ import MainPage from './_components/MainPage';
 //REDUX
 import { Provider } from 'react-redux';
 import store from './store';
+import Login from './_components/Login';
+import ListBooks from './_components/ListBooks';
 
 function App() {
   return (
@@ -16,6 +18,9 @@ function App() {
         <div className="container">
           <Switch>
             <Route exact path="/" component={MainPage}></Route>
+            <Route exact path="/login" component={Login}></Route>
+            <Route exact path="/list-books" component={ListBooks}></Route>
+
           </Switch>
         </div>
 

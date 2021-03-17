@@ -5,6 +5,8 @@ import {
 } from '../types';
 
 const initialState = {
+    topSixBooksSold: [],
+    topSixPopularAdded: [],
     books: [],
     bookSelected: null,
     loading: false,

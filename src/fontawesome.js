@@ -1,6 +1,12 @@
 import { library } from '@fortawesome/fontawesome-svg-core';
 
-import { faSearch, faShoppingCart, faBars, faBook, faCartPlus, faCreditCard } from '@fortawesome/free-solid-svg-icons';
+import {
+  faSearch, faShoppingCart,
+  faBars, faBook, faCartPlus,
+  faCreditCard, faChevronDown,
+  faChevronLeft, faChevronRight,
+  faChevronUp
+} from '@fortawesome/free-solid-svg-icons';
 
 library.add(
   faSearch,
@@ -8,5 +14,9 @@ library.add(
   faBars,
   faBook,
   faCartPlus,
-  faCreditCard
+  faCreditCard,
+  faChevronDown,
+  faChevronLeft,
+  faChevronRight,
+  faChevronUp
 );
