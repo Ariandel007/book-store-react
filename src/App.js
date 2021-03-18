@@ -8,6 +8,7 @@ import { Provider } from 'react-redux';
 import store from './store';
 import Login from './_components/Login';
 import ListBooks from './_components/ListBooks';
+import Register from './_components/Register';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Switch>
             <Route exact path="/" component={MainPage}></Route>
             <Route exact path="/login" component={Login}></Route>
+            <Route exact path="/register" component={Register}></Route>
             <Route exact path="/list-books" component={ListBooks}></Route>
 
           </Switch>
