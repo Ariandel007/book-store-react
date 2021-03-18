@@ -52,11 +52,11 @@ const Header = () => {
             </div>
 
             <div id="mySidenav" className="sidenav hide-in-desktop" ref={sideNavRef}>
-                <a onClick={closeSideNav} className="closebtn" >&times;</a>
-                <Link className="header-title" to={'/login'} onClick={closeSideNav}>Iniciar Sesión</Link>
-                <Link className="header-title" to={'/offers'} onClick={closeSideNav}>Ofertas</Link>
-                <Link className="header-title" to={'/list-books'} onClick={closeSideNav}>Todos los libros</Link>
-                <Link className="header-title" to={'/subscribe'} onClick={closeSideNav}><button className="btn btn-secondary">Suscribirse</button></Link>
+                <a onClick={closeSideNav} className="closebtn my-3" >&times;</a>
+                <Link className="header-title my-2" to={'/login'} onClick={closeSideNav}>Iniciar Sesión</Link>
+                <Link className="header-title my-2" to={'/offers'} onClick={closeSideNav}>Ofertas</Link>
+                <Link className="header-title my-2" to={'/list-books'} onClick={closeSideNav}>Todos los libros</Link>
+                <Link className="header-title my-2" to={'/subscribe'} onClick={closeSideNav}><button className="btn btn-secondary">Suscribirse</button></Link>
             </div>
                 
         </Fragment>
