@@ -1,22 +1,61 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { Link, useHistory } from 'react-router-dom';
+import { userLoginAction } from '../actions/auth-action';
 
 const Login = () => {
+
+    const dispatch = useDispatch();
+
+    const login = user => dispatch(userLoginAction(user));
+
+    const history = useHistory();
 
     const [userLogin, setUserLogin] = useState({
         email: '',
         password: ''
     });
 
+    const [errorInputs, setErrorInputs] = useState([]);
+
     const handleChange = e => {
+        const isValid = e.target.validity.valid;
+        const message = e.target.validationMessage;
+
+        validateInputs(isValid, message, e.target.name);
+
         setUserLogin({
             ...userLogin,
             [e.target.name] : e.target.value
         });
     }
 
+    const validateInputs = (isValid, message, inputName) => {
+        if (!isValid) {
+            setErrorInputs([
+                ...errorInputs,
+                {
+                    inputName,
+                    message
+                }
+            ]);
+        } else {
+            setErrorInputs(errorInputs.filter(errorInput => errorInput.inputName !== inputName));
+        }
+        
+    }
+
+    const showErrorsInForm = (inputName, ariaLabel) => {
+        const error = errorInputs.find(x => x.inputName === inputName);
+        return error? <small id={ariaLabel} className="form-text text-muted">{error.message}</small> : null;
+    }
+
     const handleSubmit = e => {
         e.preventDefault();
+
+        login(userLogin);
+
+        history.push('/');
     }
 
     return (
@@ -31,12 +70,14 @@ const Login = () => {
                         <form>
                             <div className="my-3">
                                 <label htmlFor="inputEmail">Email</label>
-                                <input name="email" value={userLogin.email} onChange={handleChange} type="email" className="form-control" id="inputEmail" placeholder="Ingresa tu email"/>
+                                <input name="email" value={userLogin.email} onChange={handleChange} type="email" className="form-control" id="inputEmail" aria-describedby="emailHelp"  placeholder="Ingresa tu email" required/>
+                                {showErrorsInForm('email', 'emailHelp')}
                             </div>
 
                             <div className="my-3">
                                 <label htmlFor="InputPassword">Contraseña</label>
-                                <input name="password" value={userLogin.password} onChange={handleChange} type="password" className="form-control" id="InputPassword" placeholder="*******"/>
+                                <input name="password" value={userLogin.password} minLength={6} onChange={handleChange} type="password" className="form-control" id="InputPassword" aria-describedby="passwordHelp" placeholder="*******" required/>
+                                {showErrorsInForm('password', 'passwordHelp')}
                             </div>
 
                             <div className="d-flex justify-content-center my-3">
